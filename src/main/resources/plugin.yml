@@ -1,0 +1,27 @@
+name: StyleSystem
+version: '${version}'
+main: org.hwabeag.stylesystem.StyleSystem
+api-version: '1.20'
+
+commands:
+  칭호생성:
+    description: 칭호를 생성합니다.
+    usage: /칭호생성
+  칭호제거:
+    description: 칭호를 제거합니다.
+    usage: /칭호제거
+  칭호지급:
+    description: 칭호를 지급합니다.
+    usage: /칭호지급
+  칭호리스트:
+    description: 칭호 리스트를 확인합니다.
+    usage: /칭호리스트
+  칭호관리:
+    description: 칭호관리를 진행합니다.
+    usage: /칭호관리
+  한닉관리:
+    description: 한닉을 관리합니다.
+    usage: /한닉관리
+  한닉권:
+    description: 한닉권을 지급합니다.
+    usage: /한닉권
