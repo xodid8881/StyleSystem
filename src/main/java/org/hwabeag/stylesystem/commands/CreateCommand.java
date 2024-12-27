@@ -39,7 +39,9 @@ public class CreateCommand implements CommandExecutor {
                 p.sendMessage(Prefix + " 최대 글자수는 " + maxstylelength + " 글자 입니다.");
                 return true;
             }
-            StyleConfig.addDefault("stylesystem.list." + args[0], args[0]);
+            String stylename = args[0];
+            stylename = ChatColor.translateAlternateColorCodes('&', stylename);
+            StyleConfig.set("stylesystem.list." + stylename, stylename);
             ConfigManager.saveConfigs();
             p.sendMessage(Prefix + " " + args[0] + " 의 칭호를 생성했습니다.");
         } else {

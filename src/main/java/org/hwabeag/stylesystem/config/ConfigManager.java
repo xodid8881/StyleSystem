@@ -40,5 +40,10 @@ public class ConfigManager {
         StyleSystemConfig.addDefault("stylesystem.prefix", "&a&l[칭호]&7");
         StyleSystemConfig.addDefault("stylesystem.maxstylelength", 10);
         StyleSystemConfig.addDefault("stylesystem.maxnickength", 8);
+        StyleSystemConfig.addDefault("stylesystem.host", "127.0.0.1");
+        StyleSystemConfig.addDefault("stylesystem.port", "3306");
+        StyleSystemConfig.addDefault("stylesystem.database", "minecraft");
+        StyleSystemConfig.addDefault("stylesystem.username", "root");
+        StyleSystemConfig.addDefault("stylesystem.password", "");
     }
 }

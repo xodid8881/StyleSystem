@@ -22,7 +22,7 @@ public class StyleDeleteGUI implements Listener {
     private ItemStack getStyle(String StyleName) {
         ItemStack item = new ItemStack(Material.NAME_TAG, 1, (short) 3);
         ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', StyleName));
+        itemMeta.setDisplayName(StyleName);
         item.setItemMeta(itemMeta);
         return item;
     }
@@ -35,12 +35,12 @@ public class StyleDeleteGUI implements Listener {
         int N = 0;
         int Page = 0;
         for (String key : Objects.requireNonNull(StyleConfig.getConfigurationSection("stylesystem.list")).getKeys(false)) {
-            if (Page == PlayerPage){
+            if (Page == PlayerPage) {
                 String style = Objects.requireNonNull(StyleConfig.getString("stylesystem.list." + key));
-                inv.setItem(N,getStyle(style));
+                inv.setItem(N, getStyle(style));
             }
             N = N + 1;
-            if (N >= 44){
+            if (N >= 44) {
                 Page = Page + 1;
                 N = 0;
             }

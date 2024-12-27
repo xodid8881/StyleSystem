@@ -35,12 +35,12 @@ public class StyleGiveGUI implements Listener {
         int N = 0;
         int Page = 0;
         for (String key : Objects.requireNonNull(StyleConfig.getConfigurationSection("stylesystem.list")).getKeys(false)) {
-            if (Page == PlayerPage){
+            if (Page == PlayerPage) {
                 String style = Objects.requireNonNull(StyleConfig.getString("stylesystem.list." + key));
-                inv.setItem(N,getStyle(style));
+                inv.setItem(N, getStyle(style));
             }
             N = N + 1;
-            if (N >= 44){
+            if (N >= 44) {
                 Page = Page + 1;
                 N = 0;
             }

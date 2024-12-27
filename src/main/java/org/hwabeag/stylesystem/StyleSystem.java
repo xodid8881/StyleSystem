@@ -7,7 +7,7 @@ import org.hwabeag.stylesystem.commands.*;
 import org.hwabeag.stylesystem.config.ConfigManager;
 import org.hwabeag.stylesystem.events.BookClickEvent;
 import org.hwabeag.stylesystem.events.InvClickEvent;
-import org.hwabeag.stylesystem.events.LoginEvent;
+import org.hwabeag.stylesystem.events.JoinEvent;
 import org.hwabeag.stylesystem.expansions.StyleExpansion;
 
 import java.util.Objects;
@@ -30,7 +30,7 @@ public final class StyleSystem extends JavaPlugin {
     private void registerEvents() {
         getServer().getPluginManager().registerEvents(new BookClickEvent(), this);
         getServer().getPluginManager().registerEvents(new InvClickEvent(), this);
-        getServer().getPluginManager().registerEvents(new LoginEvent(), this);
+        getServer().getPluginManager().registerEvents(new JoinEvent(), this);
     }
 
     private void registerCommands() {

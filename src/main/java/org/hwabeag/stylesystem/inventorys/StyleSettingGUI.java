@@ -17,7 +17,6 @@ import java.util.Objects;
 
 public class StyleSettingGUI implements Listener {
     private final Inventory inv;
-    FileConfiguration StyleConfig = ConfigManager.getConfig("stylesystem");
     FileConfiguration PlayerConfig = ConfigManager.getConfig("player");
 
     private ItemStack getStyle(String StyleName) {
@@ -39,12 +38,12 @@ public class StyleSettingGUI implements Listener {
         int N = 0;
         int Page = 0;
         for (String key : Objects.requireNonNull(PlayerConfig.getConfigurationSection(name + ".칭호목록")).getKeys(false)) {
-            if (Page == PlayerPage){
+            if (Page == PlayerPage) {
                 String style = Objects.requireNonNull(PlayerConfig.getString(name + ".칭호목록." + key));
-                inv.setItem(N,getStyle(style));
+                inv.setItem(N, getStyle(style));
             }
             N = N + 1;
-            if (N >= 44){
+            if (N >= 44) {
                 Page = Page + 1;
                 N = 0;
             }

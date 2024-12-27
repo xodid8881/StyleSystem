@@ -7,8 +7,6 @@ import org.hwabeag.stylesystem.StyleSystem;
 import org.hwabeag.stylesystem.config.ConfigManager;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 public class StyleExpansion extends PlaceholderExpansion {
@@ -57,6 +55,7 @@ public class StyleExpansion extends PlaceholderExpansion {
                     return PlayerConfig.getString(name + ".적용칭호");
                 }
             }
+            return "&l&a[&f서버원&l&a]";
         }
         if (params.equalsIgnoreCase("getnick")) { // %style_getnick%
             String name = Objects.requireNonNull(player).getName();
@@ -67,6 +66,7 @@ public class StyleExpansion extends PlaceholderExpansion {
                     return PlayerConfig.getString(name + ".적용한닉");
                 }
             }
+            return name;
         }
         return null; //
     }

@@ -104,11 +104,21 @@ public class InvClickEvent implements Listener {
                         }
                     }, 20);
                 }
-                StyleConfig.set("stylesystem.list." + clickitem, null);
-                ConfigManager.saveConfigs();
-                player.sendMessage(Prefix + " " + clickitem + " 칭호를 제거했습니다.");
-                player.closeInventory();
-                return;
+                for (String key : Objects.requireNonNull(StyleConfig.getConfigurationSection("stylesystem.list")).getKeys(false)) {
+
+                    String style = Objects.requireNonNull(StyleConfig.getString("stylesystem.list." + key));
+                    ItemStack item = new ItemStack(Material.NAME_TAG, 1, (short) 3);
+                    ItemMeta itemMeta = item.getItemMeta();
+                    itemMeta.setDisplayName(style);
+                    item.setItemMeta(itemMeta);
+
+                    if (item.getItemMeta().getDisplayName().equals(e.getCurrentItem().getItemMeta().getDisplayName())){
+                        StyleConfig.set("stylesystem.list." + style, null);
+                        ConfigManager.saveConfigs();
+                        player.sendMessage(Prefix + " " + style + " 칭호를 제거했습니다.");
+                        player.closeInventory();
+                    }
+                }
             }
             if (ChatColor.stripColor(e.getView().getTitle()).equalsIgnoreCase("칭호 지급")) {
                 String clickitem = e.getCurrentItem().getItemMeta().getDisplayName();
